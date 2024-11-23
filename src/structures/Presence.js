@@ -551,7 +551,7 @@ class RichPresenceAssets {
   static parseImage(image) {
     if (typeof image != 'string') {
       image = null;
-    } else if (URL.canParse(image) && ['http:', 'https:'].includes(new URL(image).protocol)) {
+    } else if (['http:', 'https:'].includes(new URL(image).protocol)) {
       // Discord URL:
       image = image
         .replace('https://cdn.discordapp.com/', 'mp:')
@@ -770,7 +770,7 @@ class RichPresence extends Activity {
    * @returns {RichPresence}
    */
   setURL(url) {
-    if (typeof url == 'string' && !URL.canParse(url)) throw new Error('URL must be a valid URL');
+    if (typeof url !== 'string') throw new Error('URL must be a valid URL');
     this.url = url;
     return this;
   }
@@ -892,7 +892,6 @@ class RichPresence extends Activity {
     button.flat(2).forEach(b => {
       if (b.name && b.url) {
         this.buttons.push(b.name);
-        if (!URL.canParse(b.url)) throw new Error('Button url must be a valid url');
         this.metadata.button_urls.push(b.url);
       } else {
         throw new Error('Button must have name and url');
@@ -932,7 +931,6 @@ class RichPresence extends Activity {
       throw new Error('Button must have name and url');
     }
     if (typeof name !== 'string') throw new Error('Button name must be a string');
-    if (!URL.canParse(url)) throw new Error('Button url must be a valid url');
     this.buttons.push(name);
     if (Array.isArray(this.metadata.button_urls)) this.metadata.button_urls.push(url);
     else this.metadata.button_urls = [url];
@@ -976,11 +974,11 @@ class RichPresence extends Activity {
       throw new Error('Application id must be a Discord Snowflake');
     }
     // Check if large_image is a valid url
-    if (image1 && image1.length > 0 && !URL.canParse(image1)) {
+    if (image1 && image1.length < 1) {
       throw new Error('Image 1 must be a valid url');
     }
     // Check if small_image is a valid url
-    if (image2 && image2.length > 0 && !URL.canParse(image2)) {
+    if (image2 && image2.length < 1) {
       throw new Error('Image 2 must be a valid url');
     }
     const data_ = [];
