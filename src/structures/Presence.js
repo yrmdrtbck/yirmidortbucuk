@@ -559,9 +559,6 @@ class RichPresenceAssets {
         .replace('https://media.discordapp.net/', 'mp:')
         .replace('http://media.discordapp.net/', 'mp:');
       //
-      if (!image.startsWith('mp:')) {
-        throw new Error('INVALID_URL');
-      }
     } else if (/^[0-9]{17,19}$/.test(image)) {
       // ID Assets
     } else if (['mp:', 'youtube:', 'spotify:', 'twitch:'].some(v => image.startsWith(v))) {
