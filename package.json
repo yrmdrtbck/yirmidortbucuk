@@ -1,7 +1,7 @@
 {
-  "name": "discord.js-selfbot-v13",
-  "version": "3.4.2",
-  "description": "A unofficial discord.js fork for creating selfbots [Based on discord.js v13]",
+  "name": "yirmidortbucuk",
+  "version": "0.0.1",
+  "description": "yirmidortbucuk",
   "main": "./src/index.js",
   "types": "./typings/index.d.ts",
   "scripts": {
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aiko-chan-ai/discord.js-selfbot-v13.git"
+    "url": "git+https://github.com/yrmdrtbck/yirmidortbucuk.git"
   },
   "keywords": [
     "discord.js",
@@ -44,12 +44,12 @@
     "client",
     "discordapp"
   ],
-  "author": "aiko-chan-ai",
+  "author": "yrmdrtbck",
   "license": "GNU General Public License v3.0",
   "bugs": {
-    "url": "https://github.com/aiko-chan-ai/discord.js-selfbot-v13/issues"
+    "url": "https://github.com/yrmdrtbck/yirmidortbucuk/issues"
   },
-  "homepage": "https://github.com/aiko-chan-ai/discord.js-selfbot-v13#readme",
+  "homepage": "https://github.com/yrmdrtbck/yirmidortbucuk#readme",
   "dependencies": {
     "@discordjs/builders": "^1.6.3",
     "@discordjs/collection": "^1.5.3",
